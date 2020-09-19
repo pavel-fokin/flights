@@ -11,7 +11,7 @@ def status(_request):
     return Response()
 
 
-class User(mixins.CreateModelMixin, viewsets.GenericViewSet):
+class Users(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = models.User.objects.all()
     serializer_class = serializers.User
 
@@ -20,7 +20,7 @@ class User(mixins.CreateModelMixin, viewsets.GenericViewSet):
         return Response(status=201)
 
 
-class FlightViewSet(viewsets.ModelViewSet):
+class Flights(viewsets.ModelViewSet):
     queryset = models.Flight.objects.all()
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = serializers.Flight

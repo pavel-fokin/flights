@@ -2,6 +2,7 @@ django
 django-heroku
 djangorestframework
 djangorestframework-simplejwt
+drf-yasg
 gunicorn
 markdown
 psycopg2-binary
