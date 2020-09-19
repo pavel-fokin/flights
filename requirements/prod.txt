@@ -1,7 +1,8 @@
+dj-database-url
 django
+django-filter
 djangorestframework
 djangorestframework-simplejwt
-dj-database-url
 drf-yasg
 gunicorn
 markdown

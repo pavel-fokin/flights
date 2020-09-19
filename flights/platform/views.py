@@ -1,4 +1,5 @@
 # pylint:disable=no-member
+import django_filters.rest_framework
 from rest_framework import mixins, permissions, viewsets
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -24,24 +25,10 @@ class Flights(viewsets.ModelViewSet):
     queryset = models.Flight.objects.all()
     permission_classes = (permissions.IsAuthenticated,)
     serializer_class = serializers.Flight
-
-    def get_queryset(self):
-        queryset = models.Flight.objects.all()
-
-        flight_name = self.request.query_params.get("flight_name", None)
-        if flight_name is not None:
-            queryset = queryset.filter(name=flight_name)
-
-        scheduled_at = self.request.query_params.get("scheduled_at", None)
-        if scheduled_at is not None:
-            queryset = queryset.filter(scheduled_at=scheduled_at)
-
-        departure = self.request.query_params.get("departure", None)
-        if departure is not None:
-            queryset = queryset.filter(departure=departure)
-
-        destination = self.request.query_params.get("destination", None)
-        if destination is not None:
-            queryset = queryset.filter(destination=destination)
-
-        return queryset
+    filter_backends = [django_filters.rest_framework.DjangoFilterBackend]
+    filterset_fields = [
+        "name",
+        "scheduled_at",
+        "departure",
+        "destination",
+    ]

@@ -149,7 +149,7 @@ SWAGGER_SETTINGS = {
 }
 
 db_config = dj_database_url.config(
-    conn_max_age=600, ssl_require=True
+    conn_max_age=600
 )
 if db_config:
     DATABASES["default"] = db_config
