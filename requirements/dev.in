@@ -1,0 +1,6 @@
+flake8
+pylint
+pytest
+pytest-coverage
+pytest-django
+mimesis

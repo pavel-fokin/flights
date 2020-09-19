@@ -1,0 +1,10 @@
+dj-database-url
+django
+django-filter
+djangorestframework
+djangorestframework-simplejwt
+drf-yasg
+gunicorn
+markdown
+psycopg2-binary
+whitenoise
