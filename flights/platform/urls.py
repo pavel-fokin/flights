@@ -9,6 +9,7 @@ from . import views
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r"users", views.User)
+router.register(r"flights", views.FlightViewSet)
 
 urlpatterns = [
     path("status", views.status, name="status"),

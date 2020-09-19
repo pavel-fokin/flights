@@ -2,6 +2,7 @@ django
 django-heroku
 djangorestframework
 djangorestframework-simplejwt
-markdown
 gunicorn
+markdown
+psycopg2-binary
 whitenoise

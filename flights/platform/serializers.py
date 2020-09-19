@@ -26,3 +26,19 @@ class User(rf_serializers.ModelSerializer):
         except dj_exceptions.ValidationError as exc:
             raise rf_serializers.ValidationError(exc.messages)
         return value
+
+
+class Flight(rf_serializers.ModelSerializer):
+    class Meta:
+        model = models.Flight
+        fields = [
+            "id",
+            "name",
+            "number",
+            "scheduled_at",
+            "expected_at",
+            "departure",
+            "destination",
+            "duration",
+            "fare",
+        ]
