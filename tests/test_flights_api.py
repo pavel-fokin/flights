@@ -126,7 +126,7 @@ def test_search_flight_by_name(client, headers, flights):
     some_flight = random.choice(flights)
     resp = client.get(
         reverse("flight-list"),
-        data={"flight_name": some_flight.name},
+        data={"name": some_flight.name},
         **headers,
     )
 
