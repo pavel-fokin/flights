@@ -5,11 +5,23 @@ all: help
 help:
 	@echo 'Makefile help:                                       '
 	@echo '                                                     '
+	@echo '   lint              Run linters                     '
 	@echo '   migrate           Run migrations                  '
 	@echo '   migrations        Make migrations                 '
+	@echo '   install           Install requirements            '
+	@echo '   requirements      Compile files with requirements '
 	@echo '   run               Run web app                     '
-	@echo '   lint              Run linters                     '
 	@echo '   tests             Run unit tests                  '
+
+.PHONY: requirements
+requirements:
+	@pip-compile requirements/dev.in -o requirements/dev.txt
+	@pip-compile requirements/prod.in -o requirements/prod.txt
+
+.PHONY: install
+install:
+	@pip install -r requirements/dev.txt
+	@pip install -r requirements/prod.txt
 
 .PHONY: migrations
 migrations:
@@ -31,4 +43,4 @@ tests:
 .PHONY: run
 run:
 	@export GIT_REV=`git rev-parse HEAD`;\
-	python manage.py runserver 5000
+	python manage.py runserver 0.0.0.0:5000
