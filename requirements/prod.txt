@@ -1,7 +1,7 @@
 django
-django-heroku
 djangorestframework
 djangorestframework-simplejwt
+dj-database-url
 drf-yasg
 gunicorn
 markdown
