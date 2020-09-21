@@ -1,3 +1,4 @@
+[![codecov](https://codecov.io/gh/fokinpv/flights/branch/master/graph/badge.svg)](https://codecov.io/gh/fokinpv/flights)
 # Flights API
 
 This service has API to create and search information about flights.
