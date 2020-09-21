@@ -148,6 +148,10 @@ SWAGGER_SETTINGS = {
     }
 }
 
+SIMPLE_JWT = {
+    'ROTATE_REFRESH_TOKENS': True,
+}
+
 db_config = dj_database_url.config(
     conn_max_age=600
 )

@@ -50,4 +50,4 @@ def test_refresh_token_ok(client, user):
 
     payload = resp.json()
     assert "access" in payload
-    assert "refresh" not in payload
+    assert "refresh" in payload
